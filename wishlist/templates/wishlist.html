@@ -1,24 +1,33 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<h5>Nama: </h5>
-<p>{{nama}}</p>
+{% block meta %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+{% endblock meta %}
 
-<table>
-    <tr>
-    <th>Nama Barang</th>
-    <th>Harga Barang</th>
-    <th>Deskripsi</th>
-    </tr>
-    {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
-    {% for barang in list_barang %}
-    <tr>
-        <th>{{barang.nama_barang}}</th>
-        <th>{{barang.harga_barang}}</th>
-        <th>{{barang.deskripsi}}</th>
-    </tr>
-{% endfor %}
-</table>
+{% block content %}
+{% include 'navbar.html' %}
+
+<div class="p-4">
+    <h5>Nama: </h5>
+    <b>{{nama}}</b>
+    <br>
+    <br>
+    <br>
+    <table class="table table-bordered">
+        <tr>
+        <th>Nama Barang</th>
+        <th>Harga Barang</th>
+        <th>Deskripsi</th>
+        </tr>
+        {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
+        {% for barang in list_barang %}
+        <tr>
+            <th>{{barang.nama_barang}}</th>
+            <th>{{barang.harga_barang}}</th>
+            <th>{{barang.deskripsi}}</th>
+        </tr>
+    {% endfor %}
+    </table>
 
 <h5>Sesi terakhir login: {{ last_login }}</h5>
 

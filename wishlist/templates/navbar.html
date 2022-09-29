@@ -1,0 +1,13 @@
+<div class="navbar bg-info shadow">
+    <div class="container-fluid">
+        <div class="d-flex w-100 justify-content-between">
+            <span class="navbar-brand align-self-center">Wishlist</span>
+            <div class="d-flex gap-4">
+                <p class="align-self-center m-0">{{nama}}</p>
+                <button class="border rounded border-info">
+                    <a href="{% url 'wishlist:logout' %}" class="text-decoration-none">Logout</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
