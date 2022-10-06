@@ -8,7 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript">
         $(document).ready(function(){
-            $.getJSON("json", function(data){
+            $.getJSON("{% url 'wishlist:show_json' %}") , function(data){
                 item = '';
                 $.each(data, function (key, value) {
                     item += '<tr>';
@@ -32,7 +32,7 @@
              $("#submit").click(function(){
                 alert("submitting!");
                 $.post("{% url 'wishlist:submit_ajax' %}", $('#item_data').serialize(), function(){
-                    $(location).attr('href', "{% url 'wishlist:show_wishlist_ajax' %}");
+                    $(location).attr('href', "{% url 'wishlist:wishlist_ajax' %}");
                 });
             });
             $("#new-item").click(function(){
@@ -60,7 +60,7 @@
     <br>
     <br>
     <br>
-    <table class="table table-bordered">
+    <table class="table table-bordered" id="1">
         <tr>
         <th>Nama Barang</th>
         <th>Harga Barang</th>
